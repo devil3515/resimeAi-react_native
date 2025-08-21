@@ -15,9 +15,9 @@ import {
   Divider,
   ProgressBar,
 } from 'react-native-paper';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/stack';
 import { useResume } from '../../contexts/ResumeContext';
-import { theme } from '../../theme';
+import { theme } from '../../types';
 import { Resume, ResumeAnalysis } from '../../types';
 
 const { width } = Dimensions.get('window');

@@ -194,7 +194,6 @@ export interface AuthState {
   token: string | null;
   isLoading: boolean;
   isAuthenticated: boolean;
-  error?: string;
 }
 
 export interface ResumeState {

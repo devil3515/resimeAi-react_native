@@ -17,7 +17,7 @@ import {
   List,
   Divider,
 } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/stack';
 import { useAuth } from '../../contexts/AuthContext';
 import { useResume } from '../../contexts/ResumeContext';
 import { theme } from '../../theme';
@@ -181,7 +181,7 @@ const DashboardScreen = () => {
                       {getStatusText(resume.optimizationStatus)}
                     </Chip>
                   )}
-                  onPress={() => (navigation as any).navigate('ResumeDetail', { resumeId: resume.id })}
+                  onPress={() => navigation.navigate('ResumeDetail', { resumeId: resume.id } as never)}
                   style={styles.resumeItem}
                 />
                 {index < recentResumes.length - 1 && <Divider />}

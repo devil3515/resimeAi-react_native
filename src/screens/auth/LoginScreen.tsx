@@ -16,7 +16,7 @@ import {
   Paragraph,
   HelperText,
 } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/stack';
 import { useAuth } from '../../contexts/AuthContext';
 import { theme } from '../../theme';
 import { LoginForm } from '../../types';

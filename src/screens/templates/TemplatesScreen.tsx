@@ -22,7 +22,7 @@ const { width } = Dimensions.get('window');
 const TemplatesScreen = () => {
   const { templates } = useResume();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<'ALL' | 'PROFESSIONAL' | 'CREATIVE' | 'EXECUTIVE' | 'MODERN' | 'MINIMAL' | 'CORPORATE' | 'STARTUP'>('ALL');
+  const [selectedCategory, setSelectedCategory] = useState<TemplateCategory | 'ALL'>('ALL');
 
   const getCategoryColor = (category: TemplateCategory) => {
     switch (category) {
@@ -44,7 +44,7 @@ const TemplatesScreen = () => {
     return matchesSearch && matchesCategory;
   });
 
-  const categories = ['ALL', 'PROFESSIONAL', 'CREATIVE', 'EXECUTIVE', 'MODERN', 'MINIMAL', 'CORPORATE', 'STARTUP'] as const;
+  const categories: Array<TemplateCategory | 'ALL'> = ['ALL', 'PROFESSIONAL', 'CREATIVE', 'EXECUTIVE', 'MODERN', 'MINIMAL', 'CORPORATE', 'STARTUP'];
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>

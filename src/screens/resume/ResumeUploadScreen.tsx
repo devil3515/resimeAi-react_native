@@ -16,7 +16,7 @@ import {
   Divider,
   ProgressBar,
 } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/stack';
 import DocumentPicker, { DocumentPickerResponse } from 'react-native-document-picker';
 import { useResume } from '../../contexts/ResumeContext';
 import { theme } from '../../theme';

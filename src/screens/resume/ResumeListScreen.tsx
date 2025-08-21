@@ -19,7 +19,7 @@ import {
   Menu,
   IconButton,
 } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/stack';
 import { useResume } from '../../contexts/ResumeContext';
 import { theme } from '../../theme';
 import { Resume, OptimizationStatus } from '../../types';
@@ -29,7 +29,7 @@ const ResumeListScreen = () => {
   const { resumes, getResumes, deleteResume, isLoading } = useResume();
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filterStatus, setFilterStatus] = useState<'ALL' | 'PENDING' | 'IN_PROGRESS' | 'COMPLETED' | 'FAILED'>('ALL');
+  const [filterStatus, setFilterStatus] = useState<OptimizationStatus | 'ALL'>('ALL');
   const [menuVisible, setMenuVisible] = useState<string | null>(null);
 
   useEffect(() => {
@@ -192,7 +192,7 @@ const ResumeListScreen = () => {
                       <Menu.Item
                         onPress={() => {
                           setMenuVisible(null);
-                          (navigation as any).navigate('ResumeDetail', { resumeId: resume.id });
+                          navigation.navigate('ResumeDetail', { resumeId: resume.id } as never);
                         }}
                         title="View Details"
                         leadingIcon="eye"
@@ -232,7 +232,7 @@ const ResumeListScreen = () => {
                       <Button
                         mode="outlined"
                         compact
-                        onPress={() => (navigation as any).navigate('ResumeDetail', { resumeId: resume.id })}
+                        onPress={() => navigation.navigate('ResumeDetail', { resumeId: resume.id } as never)}
                       >
                         View
                       </Button>
