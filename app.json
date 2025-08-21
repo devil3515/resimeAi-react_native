@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "ResumeAI",
+    "slug": "resume-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.resumeai"
+    },
+    "android": {
+      "package": "com.anonymous.resumeai"
+    }
+  }
+}
